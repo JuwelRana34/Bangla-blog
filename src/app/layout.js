@@ -1,22 +1,17 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto  } from "next/font/google";
 import "./globals.css";
 
 import { NavbarComponent } from "@/components/NavbarComponent";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Home | Bangla Blog",
   description: "bangla blog app for blogers",
 };
+
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export default function RootLayout({ children }) {
   return (
@@ -28,7 +23,7 @@ export default function RootLayout({ children }) {
       />
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${roboto.className} antialiased`}
       >
         <NavbarComponent />
 
