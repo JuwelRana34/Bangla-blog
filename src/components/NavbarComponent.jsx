@@ -76,15 +76,15 @@ export const NavbarComponent = async () => {
           ) : (
             <>
              <LoginLink postLoginRedirectURL="/">
-              <NavbarItem active>
-               Sign in
+              <NavbarItem active className="bg-lime-500 hover:bg-lime-600"  >
+              Login
               </NavbarItem>
               </LoginLink>
                 <RegisterLink postLoginRedirectURL="/profile">
-              <NavbarItem active className="bg-lime-500 hover:bg-lime-600">
+              <NavbarItem active className="bg-[#f2780c] hover:bg-[#f2780c]" >
                   Sign up
               </NavbarItem>
-              </RegisterLink>
+               </RegisterLink>
             </>
           )}
         </NavbarCollapse>
