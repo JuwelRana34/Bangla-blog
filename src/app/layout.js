@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+
 import { NavbarComponent } from "@/components/NavbarComponent";
 
 const geistSans = Geist({
@@ -26,20 +26,16 @@ export default function RootLayout({ children }) {
         href="https://cdn-icons-png.flaticon.com/128/3669/3669967.png"
         sizes="any"
       />
-      
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav>
-         <NavbarComponent />
-      </nav>
-       
+        <NavbarComponent />
+
         <main className=" container mx-auto min-h-screen ">{children}</main>
- <footer className="text-center text-sm bg-slate-100 py-5 text-black">
-
-     © 2023 - {new Date().getFullYear()} Bangla Blog. All rights reserved.
-
- </footer>
+        <footer className="text-center text-sm bg-slate-100 py-5 text-black">
+          © 2023 - {new Date().getFullYear()} Bangla Blog. All rights reserved.
+        </footer>
       </body>
     </html>
   );

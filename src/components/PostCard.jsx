@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const PostCard = ({title , description,id}) => {
   return (
-    <Card className=" w-64 h-68 flex  flex-col ">
+    <Card className=" w-68 p-2 h-68 flex  flex-col ">
       <CardContent className='space-y-2 flex-1'>
         <CardTitle className='text-xl'>{title}</CardTitle>
         <CardDescription>
