@@ -22,11 +22,6 @@ async function profile() {
       </h1>
       <div className="flex justify-center mt-10 relative items-center border md:w-1/2 mx-auto p-4 rounded shadow">
         <div className="flex flex-col absolute -top-5 items-center ">
-          {/* <img
-            src={user.picture}
-            alt="profile picture"
-            className="w-20 h-20 rounded-full"
-          /> */}
           <Avatar className=" h-16 w-16  ring ring-metal-200 " size="lg">
         <AvatarImage src={user.picture}/>
         <AvatarFallback>NC</AvatarFallback>

@@ -27,8 +27,8 @@ export default function RootLayout({ children }) {
       >
         <NavbarComponent />
 
-        <main className=" container mx-auto min-h-screen ">{children}</main>
-        <footer className="text-center text-sm bg-slate-100 py-5 text-black">
+        <main className=" container mx-auto min-h-[calc(100vh-134px)]">{children}</main>
+        <footer className="text-center text-sm bg-slate-200 py-5 text-black">
           © 2023 - {new Date().getFullYear()} Bangla Blog. All rights reserved.
         </footer>
       </body>
