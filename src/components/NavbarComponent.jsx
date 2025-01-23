@@ -19,15 +19,16 @@ export const NavbarComponent = async () => {
   const { isAuthenticated } = getKindeServerSession();
   const isUserAuthenticated = await isAuthenticated();
   return (
-    <Navbar className="py-2 backdrop-blur-sm z-[999] bg-white/40 sticky top-0">
+    <Navbar className="py-2 backdrop-blur-sm  z-[999] bg-white/40 sticky top-0">
       <NavbarContainer className="container mx-auto  px-5">
         <Link href={"/"}>
-          <NavbarBrand>
+          <NavbarBrand className="flex items-center space-x-4 cursor-pointer">
             <img
-              className="w-14 h-14"
+              className=" w-12   h-12 md:w-14 md:h-14"
               src={"https://cdn-icons-png.flaticon.com/128/3669/3669967.png"}
               alt="keep"
-            />
+            /> 
+            <h1 className=" font-serif text-2xl text-[#f2780c] md:text-3xl font-bold"> Bangla Blog </h1>
           </NavbarBrand>
         </Link>
         <NavbarList>
@@ -46,12 +47,12 @@ export const NavbarComponent = async () => {
           ) : (
             <>
             <LoginLink postLoginRedirectURL="/">
-              <NavbarItem active  className="bg-[#f2780c] hover:bg-[#f2780c]">
-                Sign in
+              <NavbarItem active className="bg-lime-500 hover:bg-lime-600"  >
+              Login
               </NavbarItem>
               </LoginLink>
                 <RegisterLink postLoginRedirectURL="/profile">
-              <NavbarItem active className="bg-lime-500 hover:bg-lime-600">
+              <NavbarItem active className="bg-[#f2780c] hover:bg-[#f2780c]" >
                   Sign up
               </NavbarItem>
                </RegisterLink>
