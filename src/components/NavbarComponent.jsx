@@ -19,7 +19,7 @@ export const NavbarComponent = async () => {
   const { isAuthenticated } = getKindeServerSession();
   const isUserAuthenticated = await isAuthenticated();
   return (
-    <Navbar className="py-2 backdrop-blur-sm bg-white/40 sticky top-0">
+    <Navbar className="py-2 backdrop-blur-sm z-[999] bg-white/40 sticky top-0">
       <NavbarContainer className="container mx-auto  px-5">
         <Link href={"/"}>
           <NavbarBrand>
@@ -38,19 +38,23 @@ export const NavbarComponent = async () => {
             <NavbarItem>Profile </NavbarItem>
           </Link>
           {isUserAuthenticated ? (
-            <NavbarItem active className="bg-rose-500 hover:bg-rose-500">
-              <LogoutLink>Log out</LogoutLink>
-            </NavbarItem>
+            <LogoutLink postLogoutRedirectURL="/">
+              <NavbarItem active className="bg-rose-500 hover:bg-rose-500">
+                Log out
+              </NavbarItem>
+            </LogoutLink>
           ) : (
             <>
-              <NavbarItem active>
-                <LoginLink postLoginRedirectURL="/">Sign in</LoginLink>
+            <LoginLink postLoginRedirectURL="/">
+              <NavbarItem active  className="bg-[#f2780c] hover:bg-[#f2780c]">
+                Sign in
               </NavbarItem>
-              <NavbarItem active className="bg-lime-500 hover:bg-lime-600">
+              </LoginLink>
                 <RegisterLink postLoginRedirectURL="/profile">
+              <NavbarItem active className="bg-lime-500 hover:bg-lime-600">
                   Sign up
-                </RegisterLink>
               </NavbarItem>
+               </RegisterLink>
             </>
           )}
         </NavbarList>
@@ -63,19 +67,23 @@ export const NavbarComponent = async () => {
             <NavbarItem>Profile </NavbarItem>
           </Link>
           {isUserAuthenticated ? (
-            <NavbarItem active className="bg-rose-500 hover:bg-rose-500">
-              <LogoutLink>Log out</LogoutLink>
-            </NavbarItem>
+            <LogoutLink postLogoutRedirectURL="/">
+              <NavbarItem active className="bg-rose-500 hover:bg-rose-500">
+                Log out
+              </NavbarItem>
+            </LogoutLink>
           ) : (
             <>
+             <LoginLink postLoginRedirectURL="/">
               <NavbarItem active>
-                <LoginLink postLoginRedirectURL="/">Sign in</LoginLink>
+               Sign in
               </NavbarItem>
-              <NavbarItem active className="bg-lime-500 hover:bg-lime-600">
+              </LoginLink>
                 <RegisterLink postLoginRedirectURL="/profile">
+              <NavbarItem active className="bg-lime-500 hover:bg-lime-600">
                   Sign up
-                </RegisterLink>
               </NavbarItem>
+              </RegisterLink>
             </>
           )}
         </NavbarCollapse>
